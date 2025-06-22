@@ -3,11 +3,9 @@
 import * as icon from "react-feather";
 import NavBar from "@/components/NavBar";
 import {useSearchParams} from "next/navigation";
-import {useEffect} from "react";
+import {Suspense, useEffect} from "react";
 
-
-export default function Home() {
-
+function HomeContent() {
     const searchParams = useSearchParams();
 
     const scrollIntoView = (id) => {
@@ -19,9 +17,7 @@ export default function Home() {
 
     useEffect(() => {
         const section = searchParams.get("section");
-        if (section) {
-            scrollIntoView(section);
-        }
+        scrollIntoView(section)
     }, [searchParams]);
 
     return (
@@ -30,7 +26,8 @@ export default function Home() {
             <div className="bg-[url(/DSC01234.png)] h-screen w-screen bg-cover bg-center">
                 <div className="flex flex-col h-2/3 gap-6 md:gap-10 justify-center items-center">
                     <div>
-                        <img src={"/logo1.png"} alt={"Logo"} width={200} className="max-w-[150px] md:max-w-[200px]"/>
+                        <img src={"/logo1.png"} alt={"Logo"} width={200}
+                             className="max-w-[150px] md:max-w-[200px]"/>
                     </div>
                     <div
                         className="text-center text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium italic px-4">
@@ -48,7 +45,7 @@ export default function Home() {
                             Über uns
                         </h1>
                         <p className="text-gray-700 text-base md:text-lg text-center px-2">
-                            Bio Betrieb, Mitgliedsbetrieb bei “Naturland” und “Erde & Saat”
+                            Bio Betrieb, Mitgliedsbetrieb bei "Naturland" und "Erde & Saat"
                         </p>
                     </div>
                     <div className="space-y-6 md:space-y-8">
@@ -184,5 +181,13 @@ export default function Home() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function Home() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <HomeContent />
+        </Suspense>
     );
 }

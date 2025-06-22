@@ -13,6 +13,7 @@ export default function RootLayout({children}) {
         <body>
         {children}
         <Footer/>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="1be13067-5cb4-405c-a05f-4beb427f1309"></script>
         </body>
         </html>
     );

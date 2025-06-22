@@ -1,6 +1,65 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Docker Setup
+
+This application has been dockerized for easy deployment and consistent environments.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
+
+### Building and Running with Docker
+
+#### Using Docker Compose (Recommended)
+
+1. Navigate to the webapp directory:
+   ```bash
+   cd path/to/Bioschmidt/webapp
+   ```
+
+2. Build and start the container:
+   ```bash
+   docker-compose up -d
+   ```
+
+3. The application will be available at http://localhost:3000
+
+4. To stop the container:
+   ```bash
+   docker-compose down
+   ```
+
+#### Using Docker Directly
+
+1. Navigate to the webapp directory:
+   ```bash
+   cd path/to/Bioschmidt/webapp
+   ```
+
+2. Build the Docker image:
+   ```bash
+   docker build -t bioschmidt-webapp .
+   ```
+
+3. Run the container:
+   ```bash
+   docker run -p 3000:3000 -d bioschmidt-webapp
+   ```
+
+4. The application will be available at http://localhost:3000
+
+5. To stop the container, first find the container ID:
+   ```bash
+   docker ps
+   ```
+
+6. Then stop it:
+   ```bash
+   docker stop <container-id>
+   ```
+
+## Getting Started (Development)
 
 First, run the development server:
 
