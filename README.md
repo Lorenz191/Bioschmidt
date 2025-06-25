@@ -66,9 +66,3 @@ docker build -t bioschmidt-website .
 docker run -p 3000:3000 bioschmidt-website
 ```
 
-## Contact
-For more information about Bioschmidt:
-- **Address**: Untere Hauptstraße 76, 2425 Nickelsdorf, Burgenland, Austria
-- **Phone**: +43 664 2280760
-- **Email**: info@bioschmidt.at
-- **Website**: www.bioschmidt.at
