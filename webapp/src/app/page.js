@@ -23,7 +23,7 @@ function HomeContent() {
     return (
         <div>
             <NavBar scrollIntoView={scrollIntoView}/>
-            <div className="bg-[url(/DSC01234.png)] h-screen w-screen bg-cover bg-center">
+            <div className="bg-[url(/DSC01234-2.jpg)] h-screen w-screen bg-cover bg-center">
                 <div className="flex flex-col h-2/3 gap-6 md:gap-10 justify-center items-center">
                     <div>
                         <img src={"/logo1.png"} alt={"Logo"} width={200}
